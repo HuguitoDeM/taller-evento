@@ -1,8 +1,13 @@
-document.addEventListener("DOMContentLoaded", function(){
-    var div = document.getElementById("div");
-    function SaludoDiv(){
-      alert("Hola! soy un div")
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    let Div = document.getElementById("div");
+    let Boton = document.getElementById("boton");
 
-    div.addEventListener("click",SaludoDiv)
-})
+    Boton.addEventListener("click", function(event) {
+        alert("Hola!");
+        event.stopPropagation();  // Detener la propagación del evento
+    });
+
+    Div.addEventListener("click", function() {
+        alert("Hola! Soy el div");
+    });
+});
